@@ -23,7 +23,7 @@ test.describe('UI Tests', () => {
     test('Should navigate to the flight page and verify URL and  display the correct title on the flight page', async ({ page }) => {
         const pageLocators = new PageLocators(page);
 
-        // 1) Go to flight page and verify URL & title
+        // Go to flight page and verify URL & title
         await page.goto('/flight', { waitUntil: 'networkidle' });
         await expect(page).toHaveURL(/.*flight/);
 
@@ -54,7 +54,7 @@ test.describe('UI Tests', () => {
 
         });
 
-
+        // Search and wait for results
         await pageLocators.searchButton.click();
         await page.waitForTimeout(12000);
 
@@ -65,12 +65,13 @@ test.describe('UI Tests', () => {
 
         await page.waitForTimeout(5000);
 
+        // Select NovoAir and get price
         await pageLocators.selectNovoAir.click();
         const priceText2 = await pageLocators.priceForAll.nth(1).innerText();
         const priceValue2 = parseInt(priceText2.replace(/[^\d]/g, ''), 10);
         console.log('Price for NovoAir Airlines:', priceValue2);
 
-        //Compare
+        //Price Compare
         pageLocators.comparePrices('US-Bangla', priceValue, 'NovoAir', priceValue2);
 
 
