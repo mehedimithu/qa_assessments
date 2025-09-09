@@ -80,7 +80,7 @@ test.describe('UI Tests', () => {
 
     test('API Test: Verify flight  API response', async ({ request }) => {
 
-        const response = await request.get(`${BASE_URL}/flight`);
+        const response = await request.get(`/flight`);
         expect(response.ok()).toBeTruthy();
 
         const contentType = response.headers()['content-type'] || '';
@@ -88,6 +88,7 @@ test.describe('UI Tests', () => {
 
         const body = await response.text();
         console.log('HTML length:', body.length);
+        console.log('HTML body:', body.substring(0, 200)); // Log first 200 characters
 
         expect(body.length).toBeGreaterThan(500);
     });
