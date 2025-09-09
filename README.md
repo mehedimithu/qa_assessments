@@ -12,3 +12,5 @@ cd qa_assessments
 
 How to run:
 npx playwright test ui_and_api_test.spec.ts --project=chromium --headed
+or 
+npm run run-ui-test 

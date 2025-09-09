@@ -6,7 +6,4 @@ LOG_LEVEL: 'info',
 MAX_CONNECTIONS: 10,
 ENABLE_CACHE: true,
 CACHE_DURATION: 600, // in seconds
-
-
-
 }
