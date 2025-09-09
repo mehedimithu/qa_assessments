@@ -6,8 +6,8 @@ tests/
 
 
 Installation Guide :
-git clone 
-cd 
+git clone "https://github.com/mehedimithu/qa_assessments.git"
+cd qa_assessments
 
 
 How to run:
